@@ -1,0 +1,27 @@
+{
+  "name": "News-Scraper",
+  "version": "1.0.0",
+  "description": "This app scrapes news articles from Reuters world news and displays basic info about the articles with a comment section.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djknit/News-Scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djknit/News-Scraper/issues"
+  },
+  "homepage": "https://github.com/djknit/News-Scraper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.4.2"
+  }
+}
