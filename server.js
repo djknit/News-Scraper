@@ -14,9 +14,17 @@ const handlebars = require("express-handlebars");
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-const routes = require("./routes/api");
+require("./config/connection")();
+
+const apiRoutes = require("./routes/api");
+
+const router = express.Router();
+
+router.use("/api", apiRoutes);
 
 // app.use(routes);
-app.get("/", (req, res) => res.render("index"));
+router.get("/", (req, res) => res.render("index"));
+
+app.use(router);
 
 app.listen(PORT, () => console.log("Server listening on PORT " + PORT));

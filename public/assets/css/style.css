@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+}
+
+header {
+  height: 40px;
+  background: #cccccc;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 20px);
+  padding: 10px;
+}
+
+header h2 {
+  margin: 0;
+  float: right;
+}
+
+#banner {
+  background-image: url("../images/world.jpg");
+  background-size: cover;
+  height: 300px;
+  margin-top: 60px;
+}
+
+/* Partials */
+/* no-articles */
+span.scrape {
+  text-decoration: underline;
+  color: blue;
+}
+
+div.no-articles {
+  text-align: center;
+}
