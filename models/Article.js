@@ -8,6 +8,7 @@ const ArticleSchema = new Schema({
   link: String,
   imageUrl: String,
   category: String,
+  date: String,
   comments: [{
     type: Schema.Types.ObjectId,
     ref: "Comment"

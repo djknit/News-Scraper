@@ -1,0 +1,14 @@
+{{#each articles }}
+  <div class="article card">
+    <img class="card-img-top" src={{ this.imageUrl }} alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ this.title }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ this.category }}  •  {{ this.date }}</h6>
+      <p class="card-text">{{ this.summary }}</p>
+      {{!-- <p><a href="{{ this.link }}" target="_blank">{{ this.link }}</a></p> --}}
+      <a class="btn btn-primary" href="{{ this.link }}" target="_blank">Article Link</a>
+      <a href="#" class="btn btn-primary article-comments">Comments</a>
+    </div>
+  </div>
+</div>
+{{/each}}

@@ -12,6 +12,7 @@ module.exports = {
     .catch(err => console.error(err));
   },
   deleteAll: callback => {
+    console.log("hey")
     Article.deleteMany({})
     .then(result => callback(result))
     .catch(err => console.error(err));

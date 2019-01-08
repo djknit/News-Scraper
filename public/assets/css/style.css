@@ -1,35 +1,76 @@
 body {
   margin: 0;
+  min-width: 350px;
+  background-color: #dddddd;
 }
 
-header {
-  height: 40px;
+header#header {
+  min-height: 60px;
   background: #cccccc;
   position: fixed;
   top: 0;
-  width: calc(100% - 20px);
+  width: 100%;
+  min-width: 320px;
   padding: 10px;
+  z-index: 2;
+  box-shadow: 0 4px 3px #525252;
 }
 
 header h2 {
   margin: 0;
   float: right;
+  font-size: 30px;
 }
 
 #banner {
   background-image: url("../images/world.jpg");
   background-size: cover;
   height: 300px;
+  box-shadow: 0 3px 3px #404040;
   margin-top: 60px;
 }
 
-/* Partials */
-/* no-articles */
 span.scrape {
   text-decoration: underline;
   color: blue;
+  cursor: pointer;
+}
+
+#article-area {
+  min-height: calc(100vh - 360px);
+  text-align: center;
 }
 
 div.no-articles {
   text-align: center;
+  padding-top: 30px;
+}
+
+.article.card {
+  margin: 20px;
+  width: 500px;
+  border-radius: 0;
+  border: solid 1px #111111;
+  box-shadow: 2px 4px 4px #444444;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+
+.article.card img {
+  border-radius: 0;
+}
+
+.article-comments.btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+@media screen and (max-width: 560px) {
+  .article.card {
+    margin: 20px 0px;
+    width: calc(100% - 30px);
+  }
+
 }

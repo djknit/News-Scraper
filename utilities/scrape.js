@@ -4,15 +4,18 @@ const ArticleController = require("../controllers/Article");
 
 function scrapeArticles(callback) {
   axios.get("https://www.npr.org/sections/news/")
-    .then(response => {
+    .then(result => {
       const articles = [];
-      const $ = cheerio.load(response.data);
+      const $ = cheerio.load(result.data);
       $("article").each(function(i, element) {
         let article = {};
         article.title = $(this).find("h2.title").text();
-        article.summary = $(this).find("p.teaser").text();
+        const unfixedSummary = $(this).find("p.teaser").text().split(" • ");
+        article.summary = unfixedSummary[1];
+        article.date = unfixedSummary[0];
         article.link = $(this).find(".title a").attr("href");
-        article.imageUrl = $(this).find("img").attr("src");
+        const unfixedImageUrl = $(this).find("img").attr("src");
+        if (unfixedImageUrl) article.imageUrl = unfixedImageUrl.slice(0, -8) + ".jpg";
         article.category = $(this).find("h3.slug a").text();
         if (article.title != "" && article.link != undefined) articles.push(article);
       });
