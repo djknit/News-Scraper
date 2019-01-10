@@ -14,14 +14,22 @@ router.get("/scrape", (req, res) => {
 router.get("/articles", (req, res) => {
   ArticleController.read(results => {
     console.log(results);
-    // res.render("articles", { articles: results }, { layout: "section.handlebars"})
-    res.render("articles", { articles: results, layout: false })
-    // res.json({hey: "yeah"})
+    res.render("partials/articles", { articles: results, layout: false });
   });
 });
 
 router.delete("/articles", (req, res) => {
-  ArticleController.deleteAll(results => res.json(results));
+  ArticleController.deleteAll(results => {
+    res.render("partials/no-articles", { layout: false });
+  });
+});
+
+router.get("/comments/:article_id", (req, res) => {
+  const id = req.params.article_id
+  if (!id) res.status(400);
+  ArticleController.findById(id, result => {
+    res.render("partials/modal-body", { article: result, layout: false });
+  });
 });
 
 module.exports = router;

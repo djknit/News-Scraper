@@ -1,24 +1,18 @@
-const Article = require("../models/Article");
+const Comment = require("../models/Comment");
 
 module.exports = {
   read: callback => {
-    Article.find({})
+    Comment.find({})
     .then(results => callback(results))
     .catch(err => console.error(err));
   },
-  addArticles: (articles, callback) => {
-    Article.insertMany(articles)
+  create: (comment, callback) => {
+    Comment.create(comment)
     .then(result => callback ? callback(result) : "no callback")
     .catch(err => console.error(err));
   },
   deleteAll: callback => {
-    Article.deleteMany({})
-    .then(result => callback(result))
-    .catch(err => console.error(err));
-  },
-  findById: (_id, callback) => {
-    Article.findOne({ _id })
-    .populate("comments")
+    Comment.deleteMany({})
     .then(result => callback(result))
     .catch(err => console.error(err));
   }

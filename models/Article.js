@@ -11,7 +11,7 @@ const ArticleSchema = new Schema({
   date: String,
   comments: [{
     type: Schema.Types.ObjectId,
-    ref: "Comment"
+    ref: "Note"
   }]
 });
 

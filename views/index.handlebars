@@ -1,5 +1,11 @@
 {{> header }}
 
 <div id="article-area">
-  {{> no-articles }}
+  {{#if hasArticles }}
+    {{> articles }}
+  {{else}}
+    {{> no-articles }}
+  {{/if}}
 </div>
+
+{{> modal }}
