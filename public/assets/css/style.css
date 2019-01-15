@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  min-width: 350px;
+  min-width: 320px;
   background-color: #dddddd;
 }
 
@@ -67,10 +67,74 @@ div.no-articles {
   bottom: 20px;
 }
 
+.modal-body.article-info {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-body.comments h6 {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+div.comment {
+  background-color: #f9f9f9;
+  margin: 0 0 5px;
+  padding: 12px 10px 10px;
+  text-align: right;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  position: relative;
+}
+
+.delete-comment {
+  position: absolute;
+  top: -12px;
+  right: 0px;
+  color: red;
+  font-size: 1.5rem;
+}
+
+.delete-comment:hover {
+  font-weight: 1.5rem;
+  cursor: pointer;
+}
+
+p.comment {
+  margin: 0;
+  text-align: left;
+  color: black;
+}
+
+.comment-author {
+  font-style: italic;
+}
+
+.modal-footer form {
+  width: 100%;
+}
+
+.modal-footer .form-group.name {
+  width: 50%;
+  display: inline-block;
+}
+
+#submit-button-area {
+  text-align: right;
+  padding-top: 32px;
+}
+
+#submit {
+  height: 38px;
+}
+
 @media screen and (max-width: 560px) {
   .article.card {
     margin: 20px 0px;
     width: calc(100% - 30px);
+    min-width: 346px;
   }
 
+  .modal-body.article-info a {
+    word-break: break-all;
+  }  
 }

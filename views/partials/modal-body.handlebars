@@ -1,4 +1,47 @@
-<div class="article-info">
+<div class="modal-body article-info">
   <h5 class="card-title">{{ article.title }}</h5>
   <h6 class="card-subtitle mb-2 text-muted">{{ article.category }}  •  {{ article.date }}</h6>
+  <a href={{ article.link }}>{{ article.link }}</a>
+</div>
+
+{{!-- <script>
+  const hasComments = article.comments.length > 0;
+  console.log(hasComments)
+</script> --}}
+
+<div class="modal-body comments">
+  {{#if article.comments}}
+    <h6>Press the red "x" on a comment to delete it.</h6>
+    {{#each article.comments }}
+      <div class="comment">
+        <span class="delete-comment" comment-id={{ this._id }}>&times;</span>
+        <p class="comment">{{ this.body }}</p>
+        {{#if this.author }}
+          <span class="comment-author">&mdash; {{ this.author }}</span>
+        {{else}}
+          <span class="comment-author">&mdash; Anonymous</span>
+        {{/if}}
+      </div>
+    {{/each}}
+  {{else}}
+    <h6>There are no comments for this article yet.</h6>
+  {{/if}}
+</div>
+
+<div class="modal-footer">
+  <form>
+    <div class="form-group">
+      <label for="comment">Enter your comment</label>
+      <textarea class="form-control" id="comment" rows="2"></textarea>
+    </div>
+    <div class="row">
+      <div class="form-group name col-6">
+        <label for="name">Enter your name:</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="col-6" id="submit-button-area">
+        <button type="submit" id="submit" class="btn btn-primary" article-id="{{ article._id }}">Submit</button>
+      </div>
+    </div>
+  </form>
 </div>

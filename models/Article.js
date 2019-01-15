@@ -9,10 +9,10 @@ const ArticleSchema = new Schema({
   imageUrl: String,
   category: String,
   date: String,
-  comments: [{
-    type: Schema.Types.ObjectId,
-    ref: "Note"
-  }]
+  comments: [new Schema({
+    author: String,
+    body: String
+  })]
 });
 
 const Article = mongoose.model("Article", ArticleSchema);
