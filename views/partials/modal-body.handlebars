@@ -4,11 +4,6 @@
   <a href={{ article.link }}>{{ article.link }}</a>
 </div>
 
-{{!-- <script>
-  const hasComments = article.comments.length > 0;
-  console.log(hasComments)
-</script> --}}
-
 <div class="modal-body comments">
   {{#if article.comments}}
     <h6>Press the red "x" on a comment to delete it.</h6>
