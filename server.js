@@ -15,7 +15,7 @@ app.engine("handlebars", handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 require("./config/connection")();
-require("./models");
+require("./models/Article");
 
 const apiRoutes = require("./routes/api");
 
@@ -27,8 +27,6 @@ const ArticleController = require("./controllers/Article");
 
 router.get("/", (req, res) => {
   ArticleController.read(results => {
-    // console.log(results);
-    // res.render("articles", { articles: results }, { layout: "section.handlebars"})
     res.render("index", { articles: results, hasArticles: results.length > 0 });
   });
 });
