@@ -29,6 +29,8 @@ When the user presses the scrape button, the app scrapes the [NPR news site](htt
 ## Technologies Used
 #### Front End
 * Handlebars
+* Bootstrap
+* jQuery
 * HTML, CSS, and Javascript
 
 #### Back End
@@ -36,6 +38,8 @@ When the user presses the scrape button, the app scrapes the [NPR news site](htt
 * Express
 * MongoDB
 * Mongoose
+* Axios
+* Cheerio
 * Heroku with mLab MongoDB Database
 
 ## Developer
