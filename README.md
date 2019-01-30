@@ -1,18 +1,17 @@
 # News Scraper
 
-### This app scrapes news articles from Reuters world news and displays basic info about the articles with a comment section.
-
-# Coming soon...
+### This app scrapes news articles from National Public Radio and displays basic info about the articles along with a comment section.
 
 ## Contents
 * [Links](#links)
 * [Project Goals](#project-goals)
 * [Project Features](#project-features)
 * [Technologies Used](#technologies-used)
-* [Instructions for Use](#instructions-for-use)
 * [Developer](#developer)
 
 ## Links
+Live app: [fathomless-dusk-98996.herokuapp.com](https://fathomless-dusk-98996.herokuapp.com/)
+Github repo: [github.com/djknit/news-scraper](https://github.com/djknit/news-scraper)
 
 ## Project Goals
 * Use Axios to scrape the content from a news outlet website.
@@ -25,6 +24,7 @@
 * Allow users to comment on articles, see existing comments, and delete comments.
 
 ## Project Features
+When the user presses the scrape button, the app scrapes the [NPR news site](https://www.npr.org/sections/news/) for article headlines, pictures, links, and summaries. If there are already articles in the database, the new article headlines are compared against the ones in the database to prevent duplicates and up to 8 new articles are saved in the database. The article information is displayed along with a link to the article and a comment section. The comment section is contained in a modal. The comments for the chosen article are retrieved from the database when the modal is opened.
 
 ## Technologies Used
 #### Front End
@@ -37,11 +37,6 @@
 * MongoDB
 * Mongoose
 * Heroku with mLab MongoDB Database
-
-## Instructions for Use
-#### Building the App
-
-#### Running the App
 
 ## Developer
 This project is developed and maintained by David Knittel. Any and all questions, comments, suggestions, or proposed contributions are welcome.
