@@ -10,7 +10,7 @@
 * [Developer](#developer)
 
 ## Links
-Live app: [fathomless-dusk-98996.herokuapp.com](https://fathomless-dusk-98996.herokuapp.com/)
+Live app: [daves-news-scraper.herokuapp.com/](https://daves-news-scraper.herokuapp.com/)
 Github repo: [github.com/djknit/news-scraper](https://github.com/djknit/news-scraper)
 
 ## Project Goals
