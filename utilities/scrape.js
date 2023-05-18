@@ -15,7 +15,11 @@ function scrapeArticles(callback) {
         article.date = unfixedSummary[0];
         article.link = $(this).find(".title a").attr("href");
         const unfixedImageUrl = $(this).find("img").attr("src");
-        if (unfixedImageUrl) article.imageUrl = unfixedImageUrl.slice(0, -8) + ".jpg";
+        let imageUrl = unfixedImageUrl;
+        if (unfixedImageUrl && unfixedImageUrl.indexOf('.jpg') != -1) {
+          imageUrl = unfixedImageUrl.slice(0, unfixedImageUrl.indexOf('.jpg') + '.jpg'.length)
+        }
+        article.imageUrl = imageUrl;
         article.category = $(this).find("h3.slug a").text();
         if (article.title != "" && article.link != undefined) articles.push(article);
       });
